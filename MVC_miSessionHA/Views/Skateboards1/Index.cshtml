@@ -1,0 +1,48 @@
+﻿@model IEnumerable<MVC_miSessionHA.Models.Skateboard>
+
+@{
+    ViewBag.Title = "Skateboard";
+}
+
+<h2>Skateboard</h2>
+<br />
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" style="text-align:center">
+    <tr>
+        <th style="text-align:center">
+            @Html.DisplayNameFor(model => model.Marque.Nom)
+        </th>
+        <th style="text-align:center">
+            @Html.DisplayNameFor(model => model.Style)
+        </th>
+        <th style="text-align:center">
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Marque.Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Style)
+        </td>
+        <td>
+            <img src="http://@Html.DisplayFor(modelItem => item.Image)" width="120px" />
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id = item.SkateboardID }) |
+            @Html.ActionLink("Edit", "Edit", new { id=item.SkateboardID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.SkateboardID })
+
+
+        </td>
+    </tr>
+}
+
+</table>

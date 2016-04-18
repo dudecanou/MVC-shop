@@ -1,0 +1,42 @@
+﻿@model MVC_miSessionHA.Models.Skateboard
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Skateboard</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Marque.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marque.Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Style)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Style)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            <img src="http://@Html.DisplayFor(model => model.Image)" width="240px"  />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SkateboardID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

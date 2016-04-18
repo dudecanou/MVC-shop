@@ -1,0 +1,37 @@
+﻿@model IEnumerable<MVC_miSessionHA.Models.Marque>
+@{
+    ViewBag.Title = "Liste des marques";
+}
+
+<h2>Liste de marques</h2>
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pays)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pays)
+            </td>
+            <td>
+                @Html.ActionLink("Liste des Skateboards", "Consultation", new { nom = item.Nom })
+
+            </td>
+        </tr>
+    }
+
+</table>
+

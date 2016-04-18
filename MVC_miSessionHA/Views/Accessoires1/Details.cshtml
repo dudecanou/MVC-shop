@@ -1,0 +1,50 @@
+﻿@model MVC_miSessionHA.Models.Accessoire
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Accessoire</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Skateboard.Style)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Skateboard.Style)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomAcc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomAcc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prix)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prix) $
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AccessoireID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
